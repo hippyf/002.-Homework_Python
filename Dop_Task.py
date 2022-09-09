@@ -16,10 +16,10 @@ if count_berries[0] + count_berries[1] + count_berries[-1] > count_berries[0] + 
     max = count_berries[0] + count_berries[1] + count_berries[-1]
 else: max = count_berries[0] + count_berries[-1] + count_berries[-2]
 
-for i in range(N-3):
-     new_max = count_berries[i+1] + count_berries[i+2] + count_berries[i+3]
+for i in range(N-2):
+     new_max = count_berries[i] + count_berries[i+1] + count_berries[i+2]
      if new_max > max:
         new_max = max
-        max = count_berries[i+1] + count_berries[i+2] + count_berries[i+3]
+        max = count_berries[i] + count_berries[i+1] + count_berries[i+2]
 print(f'Максимальное число ягод, которое может собрать собирающий модуль равно {max}')
 
