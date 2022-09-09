@@ -10,12 +10,16 @@
 N = int(input('Введите количесиво кустов от 3 до 1000 '))
 count_berries = []
 for i in range(N):
-    count_berries.append(int(input(f'Введите количество ягод на кусте №{ i+ 1} ')))
-max = count_berries[0] + count_berries[1] + count_berries[2]
+    count_berries.append(int(input(f'Введите количество ягод на кусте №{i+ 1} ')))
+
+if count_berries[0] + count_berries[1] + count_berries[-1] > count_berries[0] + count_berries[-1] + count_berries[-2]:
+    max = count_berries[0] + count_berries[1] + count_berries[-1]
+else: max = count_berries[0] + count_berries[-1] + count_berries[-2]
+
 for i in range(N-3):
      new_max = count_berries[i+1] + count_berries[i+2] + count_berries[i+3]
      if new_max > max:
-         new_max = max
-         max = count_berries[i+1] + count_berries[i+2] + count_berries[i+3]
+        new_max = max
+        max = count_berries[i+1] + count_berries[i+2] + count_berries[i+3]
 print(f'Максимальное число ягод, которое может собрать собирающий модуль равно {max}')
 
